@@ -1,0 +1,43 @@
+{
+    "address": "Avenue de la Praille 36, 1227 Carouge, Switzerland",
+    "api": "0.12",
+    "contact": {
+        "email": "comite@posttenebraslab.ch",
+        "irc": "irc://irc.freenode.net/#posttenebraslab",
+        "keymaster": [
+            "+41225660187"
+        ],
+        "ml": "ptl@posttenebraslab.ch",
+        "phone": "+41225660187",
+        "twitter": "@posttenebraslab"
+    },
+    "feeds": [
+        {
+            "name": "blog",
+            "type": "application/rss+xml",
+            "url": "http://www.posttenebraslab.ch/wiki/feed.php?ns=blog&num=15"
+        },
+        {
+            "name": "calendar",
+            "type": "text/calendar",
+            "url": "https://www.google.com/calendar/ical/078t9364ligd7ih4u9uv5jb3s0%40group.calendar.google.com/public/basic.ics"
+        },
+        {
+            "name": "wiki",
+            "type": "application/rss+xml",
+            "url": "http://www.posttenebraslab.ch/wiki/feed.php"
+        }
+    ],
+    "icon": {
+        "closed": "http://www.posttenebraslab.ch/images/ptl_closed.png",
+        "open": "http://www.posttenebraslab.ch/images/ptl_open.png"
+    },
+    "lastchange": 1356296019,
+    "lat": 46.187134981155396,
+    "logo": "http://www.posttenebraslab.ch/images/logo_ptl_m.png",
+    "lon": 6.1336594820022583,
+    "open": false,
+    "space": "Post Tenebras Lab",
+    "status": "This status is not being updated for now. We're working on it :) \r\nCheck our website / calender for more info.",
+    "url": "http://www.posttenebraslab.ch/"
+}

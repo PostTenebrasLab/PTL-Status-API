@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   	<meta charset="utf-8">
+	<title>Change PTL Hackerspace status</title>
+	<link rel="stylesheet" media="screen" href="form_styles.css" >
+</head>
+<body>
+<form class="change_status" method="post" name="change_status">
+    <ul>
+        <li>
+             <h2>Change PTL Hackerspace status</h2>
+        </li>
+        <li>
+            <label for="api_key">API-Key</label>
+            <input type="password" name="api_key"  placeholder="API-Key" required />
+        </li>
+        <li>
+            <label for="status">Status (max 140char) <meter value="0" min="0" max="140" id="charmeter"></meter> </label>
+            <textarea maxlength='140' id="status" name="status" cols="28" rows="5" placeholder="Hackerspace status" ></textarea> 
+			<br>
+            <label for="checkbox">Twitter</label>
+			<input type = "checkbox" name = "twitter" value = "tweet" checked /> <label for="checkbox">Tweet status update</label>
+        </li>
+        <li>
+			<label for="open_closed">Hackerspace is</label>
+			<input name="open_closed" type="radio" value="open" id="open" required />
+			<label for = "open">open</label>
+		</li>
+        <li>
+            <label for="open_closed"></label>
+			<input name="open_closed" type="radio" value="closed" id="closed" required />
+			<label for = "closed">closed</label>
+		</li>
+        <li>
+            <button class="submit" type="submit">Change status</button>
+           
+        </li>
+    </ul>
+</form>
+
+<script> 
+(function() {
+    var textarea = document.getElementById('status');
+    var meter = document.getElementById('charmeter');
+    
+    var theLength = 0;
+    
+    textarea.addEventListener('keypress', function() {
+        theLength = textarea.value.length;
+    
+        if (theLength > 140) {
+            theLength = 140;
+        }
+
+        meter.value = theLength;
+    });
+})();
+</script> 
+</body>
+</html>

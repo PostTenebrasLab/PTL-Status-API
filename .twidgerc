@@ -1,0 +1,10 @@
+[DEFAULT]
+oauthaccesstoken: %(serverbase)s/oauth/access_token
+oauthauthorize: %(serverbase)s/oauth/authorize
+oauthdata: [("user_id","1029207504"),("screen_name","sdfodsldsk"),("oauth_verifier","1535889"),("oauth_token","1029207504-2odXtSyoc0XR6IfYP7ZVNyCsIf3IPcjjAuvEhc9"),("oauth_token_secret","xdo5BvHLVeEHOeWATCSCjqmb49fgoz4eunDCVm1Ds"),("oauth_callback_confirmed","true")]
+oauthrequesttoken: %(serverbase)s/oauth/request_token
+sendmail: /usr/sbin/sendmail
+serverbase: https://api.twitter.com
+shortenurls: yes
+urlbase: %(serverbase)s/1
+
