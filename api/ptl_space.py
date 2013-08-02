@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from bottle import get, post, request, static_file, route, error
+from bottle import get, post, request, static_file, route, error, run
 
 import sys
 
@@ -25,7 +25,7 @@ def form_styles_css():
 @post('/change_status')
 def change_status_post():
     api_key 	= request.forms.get('api_key')
-    status 		= request.forms.get('status')
+    status 	= request.forms.get('status')
     open_closed	= request.forms.get('open_closed')
     twitter 	= request.forms.get('twitter')
 
@@ -33,9 +33,9 @@ def change_status_post():
         if open_closed == "open":
              open_closed = True
         else:
-			open_closed = False
+	        open_closed = False
     else:
-		return "Missing requiered information or status is longer than 140char"
+		return "Missing some information or status is longer than 140char"
 
     if API_KEYS:
         if valid_api_key(api_key, API_KEYS):
@@ -71,11 +71,6 @@ def return_info(tag, tag_sec):
 def return_json():
     return static_file('status.json', root=ROOT_FOLDER)
 
-@get('/my_ip')
-def show_ip():
-    ip = request.environ.get('REMOTE_ADDR')
-    return "Your IP is: %s" % ip
-
 #Error page
 @error(404)
 def error404(error):
@@ -88,4 +83,8 @@ def valid_api_key(api_key, file_keys):
         for key in key_list.readlines():
             if api_key == key.rstrip():
                 return True
-        return False
+    return False
+
+#Uncommend to use python built-in webserver
+#Should be commented when with Apache / modwsgi
+#run(host='localhost', port=8080)
