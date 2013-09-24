@@ -22,7 +22,7 @@ Currently using SpaceAPI v0.12. Upcoming version 0.13 not tested.
 * A main page "change_status" which can update if the Hackerspace is open/closed and the status message.
 * Can optionally send the status update to twitter using the CLI client twidge (still need work / testing)
 
-* Can get the content of a tag by going to a dynmaic URL: Syntax is /info/tag1 or /info/tag1/tag2. tag2 is a sub-tag of tag1
+* Can get the content of a tag by going to a dynmaic URL: Syntax is /info/tag1 or /info/tag1/tag2 (tag2 is a sub-tag of tag1)
 
 * Will serve the json spaceAPI file
 
