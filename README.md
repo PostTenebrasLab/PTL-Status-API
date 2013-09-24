@@ -42,7 +42,7 @@ For PTL, reference file is "status.json.reference" in git.
 
 * status.json 
 
-## Installing (WIP)
+## Installing
 
 * Copy all files into a folder where you want the web app to reside (exemple: /var/www_app/api/)
 * Modify the "ROOT_FOLDER" constant in ptl_space.py accordingly
