@@ -7,12 +7,16 @@ import sys
 import ptl_json
 import ptl_twitter
 
+### MODIFY DEPENDING ON APP LOCATION 
 ROOT_FOLDER = '/var/www_app/api/'
-JSON_FILENAME='/var/www_app/api/status.json'
+###
+
+# Other file locations
+JSON_FILENAME= ROOT_FOLDER  + 'status.json'
+API_KEYS= ROOT_FOLDER + 'api_keys'
 
 #API_KEYS must be a fixed lenght, one per line
 KEY_LENGTH=20
-API_KEYS='/var/www_app/api/api_keys'
 
 @get('/change_status')
 def change_status():
