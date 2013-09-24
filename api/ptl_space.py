@@ -89,6 +89,6 @@ def valid_api_key(api_key, file_keys):
                 return True
     return False
 
-#Uncommend to use python built-in webserver
-#Should be commented when with Apache / modwsgi
+#Uncomment to use python built-in webserver
+#Should be commented when using another web server
 #run(host='localhost', port=8080)
