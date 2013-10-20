@@ -63,8 +63,8 @@ If you want to use the python built in web server (useful for testing)
 
 Note: you will need "mod_wsgi" installed
 
+On debian, you can add this to you /etc/apache2/conf.d folder
 
->     ServerName mypage.com
 
 >     WSGIDaemonProcess api user=www-data group=www-data processes=1 threads=5
 >     WSGIScriptAlias /api /var/www_app/api/adapter.wsgi
