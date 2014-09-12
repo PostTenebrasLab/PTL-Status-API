@@ -1,26 +1,40 @@
 space_API_status-update
 =======================
 
-Interface web pour modifier du fichier JSON space API.
+PTL status update API. Used for updating the Hackerspace Space API Json file and more.
 
 ## What is the SpaceAPI?
 
-Check the official site:  spaceapi.net
-Also: http://hackerspaces.nl/spaceapi/
+Check the official site: http://spaceapi.net/
+
+>What is the Space API?
+>
+>The purpose of the Space API is to define a unified specification across the hackerspaces that can be used to expose information to web apps or any other application. The specification is based on the JSON data interchange format.
 
 ## What is this project?
 
-A simple web interface to update part of the SpaceAPI Json file. 
-The project is written in python and uses the small web framework bottle.
+A simple API to update part the SpaceAPI Json file. 
+- Update can be done from a simple web page
+- Or simply send a POST request from any device
 
-* Bottle web framework:  http://bottlepy.org
+- Can return different hackerspace logo depending if 
+- serve static Sp
+- simple Json parser
+
+The project is written in python and uses the web framework bottle.
+
+* Bottle framework:  http://bottlepy.org
+
+At Post Tenebras Lab, we are currently updating the status from our control panel. Control pannel is powered by an arduino which is connected to our "coltello" computer. Computer gets status from arduino via serial and send a post update to the status update API.
+
+
+
 
 ## Current feature
 
-Currently using SpaceAPI v0.12. Upcoming version 0.13 not tested.
+As of 2014-09, Currently using SpaceAPI v0.13.
 
 * A main page "change_status" which can update if the Hackerspace is open/closed and the status message.
-* Can optionally send the status update to twitter using the CLI client twidge (still need work / testing)
 
 * Can get the content of a tag by going to a dynmaic URL: Syntax is /info/tag1 or /info/tag1/tag2 (tag2 is a sub-tag of tag1)
 
