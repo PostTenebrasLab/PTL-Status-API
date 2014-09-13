@@ -1,0 +1,61 @@
+{
+    "api": "0.13",
+    "cache": {
+        "schedule": "m.05"
+    },
+    "contact": {
+        "email": "comite@posttenebraslab.ch",
+        "facebook": "https://www.facebook.com/PTL.CH",
+        "irc": "irc://irc.freenode.net/#posttenebraslab",
+        "issue_mail": "ptl@posttenebraslab.ch",
+        "keymasters": [
+            {
+                "name": "To enter the building please call and we will open the door"
+            },
+            {
+                "phone": "+41 22 566 01 87"
+            }
+        ],
+        "ml": "ptl@posttenebraslab.ch",
+        "phone": "+41 22 566 01 87",
+        "twitter": "@posttenebraslab"
+    },
+    "feeds": {
+        "blog": {
+            "type": "application/rss+xml",
+            "url": "http://www.posttenebraslab.ch/wiki/feed.php?ns=blog&num=15"
+        },
+        "calender": {
+            "type": "text/calendar",
+            "url": "https://www.google.com/calendar/ical/078t9364ligd7ih4u9uv5jb3s0%40group.calendar.google.com/public/basic.ics"
+        },
+        "wiki": {
+            "type": "application/rss+xml",
+            "url": "http://www.posttenebraslab.ch/wiki/feed.php"
+        }
+    },
+    "issue_report_channels": [
+        "issue_mail"
+    ],
+    "location": {
+        "address": "Avenue de la Praille 36, 1227 Carouge, Switzerland",
+        "lat": 46.187134981155396,
+        "lon": 6.133659482002258
+    },
+    "logo": "http://www.posttenebraslab.ch/images/logo_ptl_m.png",
+    "projects": [
+        "http://www.posttenebraslab.ch/wiki/projects/",
+        "https://github.com/PostTenebrasLab"
+    ],
+    "space": "Post Tenebras Lab",
+    "state": {
+        "icon": {
+            "closed": "http://www.posttenebraslab.ch/status/img/static/closed_small.png",
+            "open": "http://www.posttenebraslab.ch/status/img/static/open_small.png"
+        },
+        "lastchange": 1410640870,
+        "message": "",
+        "open": false
+    },
+    "url": "http://www.posttenebraslab.ch"
+}
