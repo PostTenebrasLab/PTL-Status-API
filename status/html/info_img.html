@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      PTL status API - Images
+    </title>
+<style type="text/css">
+
+p {
+    margin-left: 20px;
+    width: 740px;
+    padding: 2px;
+    line-height: 140%;
+}
+
+h1, h2, h3, h4, h5{
+    margin-left: 10px;
+}
+
+#img {
+    width: 700px;
+    border-collapse: collapse;
+}
+#img td, #img th {
+    font-size: 1.1em;
+    border: 1px solid #A1A7FD;
+    padding: 8px 9px 4px 1px;
+    text-align: center;
+}
+#img th {
+    font-size: 1.1em;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #eeeeee;
+    color: #333fff;                                                                                      
+}
+
+blockquote.style1 {
+  width: 700px;
+  padding: 7px;
+  background-color: #ECEDFF;
+  border-top: 1px solid #A1A7FD;
+  border-bottom: 1px solid #A1A7FD;
+  margin: 25px;
+  text-indent: 20px;
+  }
+
+
+li {
+  width: 700px;
+  list-style-type: square;
+  padding: 2px;
+  margin: 2px;
+  margin-left: 10px;
+  list-style: none;
+}
+li:before {
+    content: "▪ ";
+    color: #141966;
+}
+
+/* unvisited link */
+a:link {
+    color: #333fff;
+}
+/* visited link */
+a:visited {
+    color: #333fff;
+}
+
+</style>
+</head>
+<body>
+
+<h1>PTL Status API status images</h1>
+
+<p>
+Dynamic version returns open or closed logo depending on hackerspace status.
+</p>
+
+<h2>Small status logo</h2>
+
+<p>
+<b>http://www.posttenebraslab.ch/status/img/small_status.png</b>
+</p>
+
+<table id="img">
+  <tr>
+    <th>Dynamic</th>
+    <th><img src="small_status.png"></th>
+  </tr>
+  <tr>
+    <td>open</td>
+    <td><img src="static/open_small.png"<td>
+  </tr>
+  <tr>
+    <td>closed</td>
+    <td><img src="static/closed_small.png"<td>
+  </tr>
+</table>
+
+<br>
+
+<h2>Status Logo with "LAB" text in green/red</h2> 
+
+<p>
+<b>http://www.posttenebraslab.ch/status/img/logo_status.png</b> 
+</p>
+
+<table id="img">
+  <tr>
+    <th>Dynamic</th>
+    <th><img src="logo_status.png"></th>
+  </tr>
+  <tr>
+    <td>open</td>
+    <td><img src="static/open_logo.png"<td>
+  </tr>
+  <tr>
+    <td>closed</td>
+    <td><img src="static/closed_logo.png"<td>
+  </tr>
+</table>
+
+<br>
+
+<h2>Logo with LAB text in green when opened. Normal when closed</h2>
+
+<p>
+<b>http://www.posttenebraslab.ch/status/img/logo.png</b>
+</p>
+
+<table id="img">
+  <tr>
+    <th>Dynamic</th>
+    <th><img src="logo.png"></th>
+  </tr>
+  <tr>
+    <td>open</td>
+    <td><img src="static/open_logo.png"<td>
+  </tr>
+  <tr>
+    <td>closed</td>
+    <td><img src="static/normal_logo.png"<td>
+  </tr>
+</table>
+
+<br>
+<br>
+
+</body>
+</html>
