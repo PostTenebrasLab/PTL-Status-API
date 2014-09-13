@@ -3,6 +3,9 @@ space_API_status-update
 
 PTL status update API. Used for updating the Hackerspace Space API Json file and more.
 
+The project is written in python and uses the web framework bottle.
+* Bottle framework:  http://bottlepy.org
+
 ## What is the SpaceAPI?
 
 Check the official site: http://spaceapi.net/
@@ -13,80 +16,61 @@ Check the official site: http://spaceapi.net/
 
 ## What is this project?
 
-A simple API to update part the SpaceAPI Json file. 
+- A simple API to update the SpaceAPI Json file.
 - Update can be done from a simple web page
 - Or simply send a POST request from any device
+- Can return different hackerspace logo depending on status
+- Retrive info from Json using HTTP URL
 
-- Can return different hackerspace logo depending if 
-- serve static Sp
-- simple Json parser
+Please see http://www.posttenebraslab.ch/status for more usage information the use at Post Tenebras Lab
 
-The project is written in python and uses the web framework bottle.
+Note: that this is mainly intended for use at Post Tenebras Lab.
 
-* Bottle framework:  http://bottlepy.org
-
-At Post Tenebras Lab, we are currently updating the status from our control panel. Control pannel is powered by an arduino which is connected to our "coltello" computer. Computer gets status from arduino via serial and send a post update to the status update API.
-
-
-
-
-## Current feature
-
-As of 2014-09, Currently using SpaceAPI v0.13.
-
-* A main page "change_status" which can update if the Hackerspace is open/closed and the status message.
-
-* Can get the content of a tag by going to a dynmaic URL: Syntax is /info/tag1 or /info/tag1/tag2 (tag2 is a sub-tag of tag1)
-
-* Will serve the json spaceAPI file
+## Future feature / improvement
 
 ## File structure
 
-* ptl_space.py (main file)
-* ptl_json.py (provides json functionality)
-* ptl_twitter.py (provides twitter functionality)
-
-* api_keys (list of allowed API key)
-
-* change_status.html
-* form_styles.css
-
-* adapter.wsgi (needed for use with wsgi capable web server)
-
-The status.json (space API compliant json file). You will need to provide this.
-For PTL, reference file is "status.json.reference" in git.
-
-* status.json 
-
 ## Installing
 
-* Copy all files into a folder where you want the web app to reside (exemple: /var/www_app/api/)
-* Modify the "ROOT_FOLDER" constant in ptl_space.py accordingly
+* Install the bottle web framework (tested on debian7. Packaged version is 0.10)
+* Copy all files into a folder where you want the web app to reside (exemple: /var/www_app/status/ or /data/www_app/status)
+* Modify the "ROOT_FOLDER" constant in adapter.wsgi
+* Modify the constants in config.py (configuratin file)
+* Add a key in api_keys (one key per line, length must match what is set in config.py)
+
+If using in another Hackerspace, you will likely want to modify the doc, json file, and python script to suit your usercase.
 
 If you're using an external web server with wsgi:
 
-* Change sys.path in adapter.wsgi to relect the installation folder
-* Configure you webserver
+* Configure you webserver to serve the bottle web app
 
 If you want to use the python built in web server (useful for testing)
-* Uncomment the relevent lines a the end of "ptl_space"
-* Execute "ptl_space.py"
-* You should have a local web server running on port 8080
+* Uncomment the relevent lines a the end of "status_api.py"
+* Execute "status_api.py"
+* You should now have a local web server running on port 8080
 
 ### Sample apache configuration
 
-Note: you will need "mod_wsgi" installed
+* You will need to install "mod_wsgi"
 
-On debian, you can add this to you /etc/apache2/conf.d folder
+On debian, you can add a file to your /etc/apache2/conf.d folder with this configuration:
 
+* Adapt location as needed
 
->     WSGIDaemonProcess api user=www-data group=www-data processes=1 threads=5
->     WSGIScriptAlias /api /var/www_app/api/adapter.wsgi
+````
+## PTL-Status-API ##
+## Uses bottle python web framework ##
+## https://github.com/PostTenebrasLab/PTL-Status-API
 
->     <Directory /var/www_app/api>
->         WSGIProcessGroup api
->         WSGIApplicationGroup %{GLOBAL}
->         Order deny,allow
->         Allow from all
->     </Directory>
+WSGIDaemonProcess status user=www-data group=www-data processes=1 threads=5
+WSGIScriptAlias /status /data/www_app/status/adapter.wsgi
+
+<Directory /data/www_app/status>
+    WSGIProcessGroup status
+    WSGIApplicationGroup %{GLOBAL}
+    Order deny,allow
+    Allow from all
+</Directory>
+##### END BOTTLE #######
+````
 
