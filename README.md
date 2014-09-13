@@ -22,7 +22,7 @@ Check the official site: http://spaceapi.net/
 - Can return different hackerspace logo depending on status
 - Retrive info from Json using HTTP URL
 
-*Please see http://www.posttenebraslab.ch/status for more usage information the use at Post Tenebras Lab*
+**Please see http://www.posttenebraslab.ch/status for more usage information the use at Post Tenebras Lab**
 
 Note: This project is mainly intended for use at the PTL Hackerspace.
 
