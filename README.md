@@ -1,7 +1,7 @@
-space_API_status-update
+PTL-Status-API
 =======================
 
-PTL status update API. Used for updating the Hackerspace Space API Json file and more.
+Used for updating the Hackerspace Space API Json file and more.
 
 The project is written in python and uses the web framework bottle.
 * Bottle framework:  http://bottlepy.org
@@ -16,15 +16,15 @@ Check the official site: http://spaceapi.net/
 
 ## What is this project?
 
-- A simple API to update the SpaceAPI Json file.
+- A simple webapp/"API" to update the Space API Json file.
 - Update can be done from a simple web page
 - Or simply send a POST request from any device
 - Can return different hackerspace logo depending on status
 - Retrive info from Json using HTTP URL
 
-Please see http://www.posttenebraslab.ch/status for more usage information the use at Post Tenebras Lab
+*Please see http://www.posttenebraslab.ch/status for more usage information the use at Post Tenebras Lab*
 
-Note: that this is mainly intended for use at Post Tenebras Lab.
+Note: This project is mainly intended for use at the PTL Hackerspace.
 
 ## Future feature / improvement
 
