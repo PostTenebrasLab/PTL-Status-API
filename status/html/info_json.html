@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      PTL status API - Json
+    </title>
+<style type="text/css">
+
+p {
+    margin-left: 20px;
+    width: 740px;
+    padding: 2px;
+    line-height: 140%;
+}
+
+h1, h2, h3, h4, h5{
+    margin-left: 10px;
+}
+
+#img {
+    width: 700px;
+    border-collapse: collapse;
+}
+#img td, #img th {
+    font-size: 1.1em;
+    border: 1px solid #A1A7FD;
+    padding: 8px 9px 4px 1px;
+    text-align: center;
+}
+#img th {
+    font-size: 1.1em;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #eeeeee;
+    color: #333fff;                                                                                      
+}
+
+blockquote.style1 {
+  width: 700px;
+  padding: 7px;
+  background-color: #ECEDFF;
+  border-top: 1px solid #A1A7FD;
+  border-bottom: 1px solid #A1A7FD;
+  margin: 25px;
+  text-indent: 20px;
+  }
+
+
+li {
+  width: 700px;
+  list-style-type: square;
+  padding: 2px;
+  margin: 2px;
+  margin-left: 10px;
+  list-style: none;
+}
+li:before {
+    content: "▪ ";
+    color: #141966;
+}
+
+/* unvisited link */
+a:link {
+    color: #333fff;
+}
+/* visited link */
+a:visited {
+    color: #333fff;
+}
+
+</style>
+</head>
+<body>
+
+<h1>PTL Status API - info</h1>
+<p>
+The PTL Status API is a simple webapp which uses the <a href="http://bottlepy.org/">bottle python Web Framework</a>.
+It is used for updading the Hackersapce Space API JSON file and more.
+</p>
+
+<h2>Space API Information</h2>
+<blockquote cite="http://spaceapi.net/" class="style1"><span>
+<b>What is the Space API?</b><br><br> The purpose of the Space API is to define a unified specification across the hackerspaces that can be used to expose information to web apps or any other application. The specification is based on the JSON data interchange format.
+</span></blockquote>
+<p>
+Check out the <a href="http://spaceapi.net/"><strong>Space API website</strong></a> and the <strong><a href="http://spaceapi.net/">list of apps</a></strong> using it !
+</p>
+
+<h2>Space API @ Post Tenebras Lab</h2>
+<p>
+Post Tenebras Lab publishes a JSON file following the <a href="http://spaceapi.net/documentation">Space API v0.13 specs</a>
+</p>
+<p>
+It can be accessed from any of the following URL:
+ <ul>
+  <li><a href="http://www.posttenebraslab.ch/status/status.json">http://www.posttenebraslab.ch/status/status.json</a></li>
+  <li><a href="http://www.posttenebraslab.ch/status/json">http://www.posttenebraslab.ch/status/json</a></li>
+  <li><a href="http://www.posttenebraslab.ch/status/json/">http://www.posttenebraslab.ch/status/json/</a></li>
+</ul> 
+</p>
+
+<p>
+<b>Currently our JSON provides:</b>
+<ul>
+  <li>Space name, website URL and logo</li>
+  <li>Contact information (address, phone, email, irc, twitter...)</li>
+  <li>Status information (open/closed) and message</li>
+  <li>Feed information for Calender (ICS),  wiki (RSS) and blog (RSS)</li>
+  <li>List of project related pages (github, wiki project section)</li>
+</ul>
+</p>
+
+<p>
+<b>If you would like to add additional informations:</b>
+<ul>
+  <li>Check out the Space API <a href="http://spaceapi.net/documentation#list of supported fields">supported fields</a></li>
+  <li>If needed, ask the Space API project ass a field (or use custom field)</li>
+  <li>For static information: simply ask for it to be added to our JSON</li>
+  <li>For dynamic information: done with HTTP POST request (API Key required)</li>
+  <li>Let us know on the mailing-list about your (crazy) idea / project</li>  
+  <li>Change to the PTL Status API will be needed to allow better updates</li>
+  <li><b>PTL Status API code is on our <a href="https://github.com/PostTenebrasLab/space_API_status-update github">Github</a></li></b>
+</ul>
+</p>
+
+<h2>Updating status @ Post Tenebras Lab</h2>
+<p>
+<b>Status can be updated from the PTL Control Pannel in the space.</b><br>
+This is a hardware box with analog gauges and levers (old voltmeter / ammeter)
+<ul>
+  <li>Left lever changes remaining time</li>
+  <li>Left gauge shows remaining time (updated over time) </li>
+  <li>Right lever changes the number of ppl in the space</li>
+  <li>Right gauge shows current ppl count</li>
+  <li>on/off switch (for easy reset / closing the space)</li>
+  <li>Note:  Setting remaining time will change ppl count to 1 if unset</li>
+</ul>
+</p>
+<p>
+The PTL Control Pannel uses an Ardiono which is connected to the "coltello" pc/server by USB.
+A python script on the computer retrieves data (serial) from the Arduino and sends a POST request to the PTL Status API running on posttenebraslab.ch.
+</p>
+
+<p>
+<b>The PTL Control Pannel project is on our <a href="https://github.com/PostTenebrasLab/space_API_control_panel">Github</a></li></b>
+</p>
+
+<h2>PTL Status API status images</h2>
+<p>
+Check out the current <a href="http://www.posttenebraslab.ch/status/img/"><b>PTL Status API images</b></a>
+</p>
+<p>
+<b>If you want to hotlink to the images, please ask us.</b>
+</p>
+
+<h2>Simple PTL Space API info retieval</h2>
+
+<p>
+It is possible to use specific URL to retrieve information pour the JSON.
+<br>This is a simple parser and uses the following syntax:<br>
+<br><strong>http://www.posttenebraslab.ch/status/info/tag1/tag2/tag3/</strong>
+
+<ul>
+  <li>Works up to 3 level down (tag1, tag2, tag3)</li>
+  <li>tag2 and tag3 are optional</li>
+  <li>It is possible to retrieve JSON array, but not drill down to its elements</li>
+  <li>JSON string, boolean and number are returned as text in the HTTP response</li>  
+  <li>On invalid tag, an empty page with HTTP status codes 404 is returned</li>
+</ul>
+</p>
+
+<p>
+<b>Examples:</b> 
+<ul>
+  <li><a href="http://www.posttenebraslab.ch/status/info/state/">http://www.posttenebraslab.ch/status/info/state/</a></li>
+  <ul>
+      <li>Return "state" object with all sub-objects</li>
+  </ul>
+  <li><a href="http://www.posttenebraslab.ch/status/info/api/">http://www.posttenebraslab.ch/status/info/api/</a></li>
+  <ul>
+      <li>Return "api" string (space API version used)</li>
+  </ul>
+  <li><a href="http://www.posttenebraslab.ch/status/info/state/open/">http://www.posttenebraslab.ch/status/info/state/open/</a></li>
+  <ul>
+      <li>Return "True" or "False" depending if space is open or closed</li>
+  </ul>
+  <li><a href="http://www.posttenebraslab.ch/status/info/feed/blog/url/">http://www.posttenebraslab.ch/status/info/feed/blog/url/</a></li>
+  <ul>
+      <li>Return the url of the blog</li>
+  </ul>
+  <li><a href="http://www.posttenebraslab.ch/status/info/location/lon">http://www.posttenebraslab.ch/status/info/location/lon</a></li>
+  <ul>
+      <li>Return "lon" number object in location (as in Lat/Lon coordinate)</li>
+  </ul>
+
+
+</ul>
+</p>
+
+</body>
+</html>
