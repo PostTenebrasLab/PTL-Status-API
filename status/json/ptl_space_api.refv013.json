@@ -1,7 +1,7 @@
 {
     "api": "0.13",
     "cache": {
-        "schedule": "m.05"
+        "schedule": "m.02"
     },
     "contact": {
         "email": "comite@posttenebraslab.ch",
