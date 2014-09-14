@@ -111,10 +111,14 @@ def open_closed_img():
         root=ROOT_FOLDER,
         mimetype='image/png')
 
-
+# HTML page showing the different logo
 @get('/img/')
 def img_info_page():
     return static_file('html/info_img.html', root=ROOT_FOLDER)
+
+@get('/img/PTL_control_pannel.jpg')
+def img_info_page():
+    return static_file('img/PTL_control_pannel.jpg', root=ROOT_FOLDER)
 
 ######## End of status image section ####################
 
