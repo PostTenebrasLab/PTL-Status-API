@@ -116,9 +116,9 @@ def open_closed_img():
 def img_info_page():
     return static_file('html/info_img.html', root=ROOT_FOLDER)
 
-@get('/img/PTL_control_panel.jpg')
+@get('/img/ptl_control_panel.jpg')
 def img_info_page():
-    return static_file('img/PTL_control_panel.jpg', root=ROOT_FOLDER)
+    return static_file('img/ptl_control_panel.jpg', root=ROOT_FOLDER)
 
 ######## End of status image section ####################
 
