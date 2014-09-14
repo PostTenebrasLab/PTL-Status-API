@@ -166,8 +166,8 @@ def change_status_post():
 @get('/')
 @get('/info')
 @get('/info/')
-def info_json_page():
-    return static_file('html/info_json.html', root=ROOT_FOLDER)
+def info_ptl_status_api_page():
+    return static_file('html/info_ptl_status_api.html', root=ROOT_FOLDER)
 
 
 @get('/info/:tag#[a-z]+#')
