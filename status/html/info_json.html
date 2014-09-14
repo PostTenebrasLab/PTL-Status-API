@@ -72,7 +72,7 @@
     <h1>PTL Status API - info</h1>
 
     <p>The PTL Status API is a simple webapp which uses the <a href="http://bottlepy.org/">bottle python Web
-    Framework</a>. It is used for updading the Hackersapce Space API JSON file and more.</p>
+    Framework</a>. It is used for updating the Hackersapce Space API JSON file and more.</p>
 
     <h2>Space API Information</h2>
 
@@ -109,6 +109,16 @@
         </li>
     </ul>
 
+    <p>The "cache" object in the JSON Space API indicate the allowed retrieval interval (for application...). The value "m.02" means every two minutes.</p>
+
+    <p><b>The space API Json directory provides a cached version at following URL:</b></p>
+    
+    <ul>
+        <li>
+            <b><a href="http://spaceapi.net/cache/Post+Tenebras+Lab">http://spaceapi.net/cache/Post+Tenebras+Lab</a></b>
+        </li>
+    </ul>
+    
     <p style="font-weight: bold">Currently our JSON provides:</p>
 
     <ul>
@@ -145,7 +155,7 @@
 
     <h2>Updating status @ Post Tenebras Lab</h2>
 
-    <p><b>Status can be updated from the PTL Control Pannel in the space.</b><br>
+    <p><b>Status can be updated from the PTL Control Panel in the space.</b><br>
     This is a hardware box with analog gauges and levers (old voltmeter / ammeter)</p>
 
     <ul>
@@ -162,11 +172,11 @@
         <li>Note: Setting remaining time will change ppl count to 1 if unset</li>
     </ul>
 
-    <p>The PTL Control Pannel uses an Ardiono which is connected to the "coltello" pc/server by USB. A python script on
+    <p>The PTL Control Panel uses an Arduino which is connected to the "coltello" pc/server by USB. A python script on
     the computer retrieves data (serial) from the Arduino and sends a POST request to the PTL Status API running on
     posttenebraslab.ch.</p>
 
-    <p style="font-weight: bold">The PTL Control Pannel project is on our <a href=
+    <p style="font-weight: bold">The PTL Control Panel project is on our <a href=
     "https://github.com/PostTenebrasLab/space_API_control_panel">Github</a></p>
 
     <h2>PTL Status API status images</h2>
@@ -176,7 +186,7 @@
 
     <p style="font-weight: bold">If you want to hotlink to the images, please ask us.</p>
 
-    <h2>Simple PTL Space API info retieval</h2>
+    <h2>Simple PTL Space API info retrieval</h2>
 
     <p>It is possible to use specific URL to retrieve information pour the JSON.<br>
     This is a simple parser and uses the following syntax:<br>
