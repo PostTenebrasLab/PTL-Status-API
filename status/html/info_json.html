@@ -85,6 +85,32 @@
     <p>Check out the <a href="http://spaceapi.net/"><strong>Space API website</strong></a> and the <strong><a href=
     "http://spaceapi.net/">list of apps</a></strong> using it !</p>
 
+    <h2>Updating status @ Post Tenebras Lab</h2>
+
+    <p><b>Status can be updated from the PTL Control Panel in the space.</b><br>
+    This is a hardware box with analog gauges and levers (old voltmeter / ammeter)</p>
+
+    <ul>
+        <li>Left lever changes remaining time</li>
+
+        <li>Left gauge shows remaining time (updated over time)</li>
+
+        <li>Right lever changes the number of ppl in the space</li>
+
+        <li>Right gauge shows current ppl count</li>
+
+        <li>on/off switch (for easy reset / closing the space)</li>
+
+        <li>Note: Setting remaining time will change ppl count to 1 if unset</li>
+    </ul>
+
+    <p>The PTL Control Panel uses an Arduino which is connected to the "coltello" pc/server by USB. A python script on
+    the computer retrieves data (serial) from the Arduino and sends a POST request to the PTL Status API running on
+    posttenebraslab.ch.</p>
+
+    <p style="font-weight: bold">The PTL Control Panel project is on our <a href=
+    "https://github.com/PostTenebrasLab/space_API_control_panel">Github</a></p>
+
     <h2>Space API @ Post Tenebras Lab</h2>
 
     <p>Post Tenebras Lab publishes a JSON file following the <a href="http://spaceapi.net/documentation">Space API
@@ -150,32 +176,6 @@
         <li><b>PTL Status API code is on our <a href=
         "https://github.com/PostTenebrasLab/space_API_status-update">Github</a></b></li>
     </ul>
-
-    <h2>Updating status @ Post Tenebras Lab</h2>
-
-    <p><b>Status can be updated from the PTL Control Panel in the space.</b><br>
-    This is a hardware box with analog gauges and levers (old voltmeter / ammeter)</p>
-
-    <ul>
-        <li>Left lever changes remaining time</li>
-
-        <li>Left gauge shows remaining time (updated over time)</li>
-
-        <li>Right lever changes the number of ppl in the space</li>
-
-        <li>Right gauge shows current ppl count</li>
-
-        <li>on/off switch (for easy reset / closing the space)</li>
-
-        <li>Note: Setting remaining time will change ppl count to 1 if unset</li>
-    </ul>
-
-    <p>The PTL Control Panel uses an Arduino which is connected to the "coltello" pc/server by USB. A python script on
-    the computer retrieves data (serial) from the Arduino and sends a POST request to the PTL Status API running on
-    posttenebraslab.ch.</p>
-
-    <p style="font-weight: bold">The PTL Control Panel project is on our <a href=
-    "https://github.com/PostTenebrasLab/space_API_control_panel">Github</a></p>
 
     <h2>PTL Status API status images</h2>
 
