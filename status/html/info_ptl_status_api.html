@@ -188,7 +188,7 @@
 
     <h2>Simple PTL Space API info retrieval</h2>
 
-    <p>It is possible to use specific URL to retrieve information pour the JSON.<br>
+    <p>It is possible to use specific URL pattern to retrieve information from the JSON.<br>
     This is a simple parser and uses the following syntax:<br>
     <br>
     <strong>http://www.posttenebraslab.ch/status/info/tag1/tag2/tag3/</strong></p>
@@ -198,9 +198,9 @@
 
         <li>tag2 and tag3 are optional</li>
 
-        <li>It is possible to retrieve JSON array, but not drill down to its elements</li>
-
         <li>JSON string, boolean and number are returned as text in the HTTP response</li>
+
+        <li>JSON array can be returned, however you can not access a specific array element</li>
 
         <li>On invalid tag, an empty page with HTTP status codes 404 is returned</li>
     </ul>
