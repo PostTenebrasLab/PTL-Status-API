@@ -30,8 +30,6 @@ Note: This project is mainly intended for use at the PTL Hackerspace.
 
 ## Future feature / improvement
 
-## File structure
-
 ## Installing
 
 * Install the bottle web framework (tested on debian7. Packaged version is 0.10)
