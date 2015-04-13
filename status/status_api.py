@@ -209,6 +209,7 @@ def return_info(tag, tag2, tag3):
 @get('/json/')
 @get('/json')
 def return_json():
+    status_json.json_read(JSON_FILENAME, skip_check=0)
     response.set_header('Cache-Control', 'no-cache')
     response.set_header('max age', '0')
     response.set_header('Pragma', 'no-cache')
