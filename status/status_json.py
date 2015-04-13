@@ -4,16 +4,23 @@ import json
 import sys
 import time
 
+# Conf file with constants
+from config import *
 
-def json_read(filename):
+
+def json_read(filename, skip_check=0):
     try:
         json_file = open(filename)
         json_parsed = json.loads(json_file.read())
     except IOError:
         sys.stderr.write("Could not open json file")
         sys.exit()
+    if skip_check == 1:
+        pass
     else:
-        return json_parsed
+        if int(json_parsed["state"]["lastchange"]) < (int(time.time()) - TIME_DELTA):
+            update_status(JSON_FILENAME, EMERG_MSG, False)
+    return json_parsed
 
 
 def json_value(filename, tag, tag2=None, tag3=None):
@@ -34,7 +41,7 @@ def json_value(filename, tag, tag2=None, tag3=None):
 
 
 def update_status(filename, status, open_closed):
-    json_parsed = json_read(filename)
+    json_parsed = json_read(filename, skip_check=1)
     json_parsed["state"]["open"] = open_closed
     json_parsed["state"]["message"] = status
     json_parsed["state"]["lastchange"] = int(time.time())
