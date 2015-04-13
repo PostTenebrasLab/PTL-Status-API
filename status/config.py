@@ -7,3 +7,8 @@ ROOT_FOLDER = '/data/www_app/status/'
 # API_KEYS must be a fixed lenght, one per line
 KEY_LENGTH = 20
 API_KEYS = '/data/www_app/status/api_keys'
+
+# Emmergency shutdown option
+# If no update where made within the last TIME_DELTA second, EMERG_MSG message is set
+TIME_DELTA=1800
+EMERG_MSG="Lab status unknown: emmergency shutdown ! [No update from PTL control panel in last 30m]"
