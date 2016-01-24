@@ -95,20 +95,33 @@
     <ul>
         <li>Left lever changes remaining time</li>
 
-        <li>Left gauge shows remaining time (updated over time)</li>
+        <li>Left gauge shows remaining time</li>
 
-        <li>Right lever changes the number of ppl in the space</li>
+        <li>Right lever changes the number of person in the space</li>
 
-        <li>Right gauge shows current ppl count</li>
+        <li>Right gauge shows current person count</li>
 
-        <li>on/off switch (for easy reset / closing the space)</li>
+        <li>on/off switch (non-essenaiL: for easy reset / close the space)</li>
 
         <li>Note: Setting remaining time will change ppl count to 1 if unset</li>
     </ul>
 
-    <p>The PTL Control Panel uses an Arduino which is connected to the "coltello" pc/server by USB. A python script on
-    the computer retrieves data (serial) from the Arduino and sends a POST request to the PTL Status API running on
-    posttenebraslab.ch.</p>
+    <h2>Music integration @ Post Tenebras Lab</h2>
+
+    As As of early 2016, functionality was added for basic Music control/integration in the lab:
+    
+    <ul>
+        <li>When Lab status changes from Open to Close: Music is stopped</li>
+        <li>When Lab status change from Close to Open: Play music (last playlist is restored)</li>
+        <li>When remaining time reaches 5min, saves current playlist and play playlist named "Last5min" </li>
+    </ul>
+    
+    Note: MPD is used for music playback in the lab.
+
+    <h2>About Control Pannel @ Post Tenebras Lab</h2>
+
+    <p>The PTL Control Panel uses an Arduino Uno with an Ethernet Shield. The Arduino sends POST request to the PTL Status API running on
+    posttenebraslab.ch to update the status. The Arduino also send tcp command to MPD running on coltello.lan.posttenebraslab.ch.</p>
 
     <p style="font-weight: bold">The PTL Control Panel project is on our <a href=
     "https://github.com/PostTenebrasLab/space_API_control_panel">Github</a></p>
