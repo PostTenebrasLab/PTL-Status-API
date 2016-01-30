@@ -23,7 +23,7 @@
     "feeds": {
         "blog": {
             "type": "application/rss+xml",
-            "url": "http://www.posttenebraslab.ch/wiki/feed.php?ns=blog&num=15"
+            "url": "https://www.posttenebraslab.ch/wiki/feed.php?ns=blog&num=15"
         },
         "calender": {
             "type": "text/calendar",
@@ -31,7 +31,7 @@
         },
         "wiki": {
             "type": "application/rss+xml",
-            "url": "http://www.posttenebraslab.ch/wiki/feed.php"
+            "url": "https://www.posttenebraslab.ch/wiki/feed.php"
         }
     },
     "issue_report_channels": [
@@ -42,20 +42,20 @@
         "lat": 46.187134981155396,
         "lon": 6.133659482002258
     },
-    "logo": "http://www.posttenebraslab.ch/images/logo_ptl_m.png",
+    "logo": "https://www.posttenebraslab.ch/images/logo_ptl_m.png",
     "projects": [
-        "http://www.posttenebraslab.ch/wiki/projects/",
+        "https://www.posttenebraslab.ch/wiki/projects/",
         "https://github.com/PostTenebrasLab"
     ],
     "space": "Post Tenebras Lab",
     "state": {
         "icon": {
-            "closed": "http://www.posttenebraslab.ch/images/ptl_closed.png",
-            "open": "http://www.posttenebraslab.ch/images/ptl_open.png"
+            "closed": "https://www.posttenebraslab.ch/images/ptl_closed.png",
+            "open": "https://www.posttenebraslab.ch/images/ptl_open.png"
         },
         "lastchange": 1410515878,
         "message": "Space closed. Making changes to json file / status update",
         "open": false
     },
-    "url": "http://www.posttenebraslab.ch"
+    "url": "https://www.posttenebraslab.ch"
 }
