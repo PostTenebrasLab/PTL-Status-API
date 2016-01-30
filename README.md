@@ -6,7 +6,7 @@ Used for updating the Hackerspace Space API Json file and more.
 The project is written in python and uses the web framework bottle.
 * Bottle framework:  http://bottlepy.org
 
-**Please see http://www.posttenebraslab.ch/status for more information about the use at Post Tenebras Lab**
+**Please see https://www.posttenebraslab.ch/status for more information about the use at Post Tenebras Lab**
 
 ## What is the SpaceAPI?
 
@@ -24,7 +24,7 @@ Check the official site: http://spaceapi.net/
 - Can return different hackerspace logo depending on status
 - Retrive info from Json using HTTP URL
 
-**Please see http://www.posttenebraslab.ch/status for more information**
+**Please see https://www.posttenebraslab.ch/status for more information**
 
 Note: This project is mainly intended for use at the PTL Hackerspace.
 
