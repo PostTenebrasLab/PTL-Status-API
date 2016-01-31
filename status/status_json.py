@@ -3,10 +3,10 @@
 import json
 import sys
 import time
+import shutil
 
 # Conf file with constants
 from config import *
-
 
 def json_read(filename, skip_check=0):
     try:
@@ -21,7 +21,6 @@ def json_read(filename, skip_check=0):
         if int(json_parsed["state"]["lastchange"]) < (int(time.time()) - TIME_DELTA):
             update_status(JSON_FILENAME, EMERG_MSG, False)
     return json_parsed
-
 
 def json_value(filename, tag, tag2=None, tag3=None):
     json_parsed = json_read(filename)
@@ -38,7 +37,6 @@ def json_value(filename, tag, tag2=None, tag3=None):
         return None
     else:
         return str(result)
-
 
 def update_status(filename, status, open_closed):
     json_parsed = json_read(filename, skip_check=1)
@@ -58,5 +56,12 @@ def update_status(filename, status, open_closed):
     except IOError:
         sys.stderr.write("Could not write json file")
         sys.exit()
+    if open_closed:
+        shutil.copy(LOGO_OPEN,LOGO_DYN_1)
+        shutil.copy(LOGO_OPEN,LOGO_DYN_2)
+        shutil.copy(LOGO_OPEN_SMALL,LOGO_DYN_SMALL)
     else:
-        return True
+        shutil.copy(LOGO_NORMAL,LOGO_DYN_1)
+        shutil.copy(LOGO_CLOSED,LOGO_DYN_2)
+        shutil.copy(LOGO_CLOSED_SMALL,LOGO_DYN_SMALL)
+    return True
