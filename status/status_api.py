@@ -11,105 +11,40 @@ from config import *
 ######## Start of status image section ####################
 
 # Return small open / closed logo
-
-
 @get('/img/small_status.png')
 def open_closed_img():
-    response.set_header('Cache-Control', 'no-cache, no-store, must-revalidate')
-    response.set_header('max age', '0')
-    response.set_header('Pragma', 'no-cache')
-    response.set_header('Expires', '0')
-    if status_json.json_value(JSON_FILENAME, "state", "open") == "True":
-        return static_file(
-            'img/open_small.png',
-            root=ROOT_FOLDER,
-            mimetype='image/png')
-    else:
-        return static_file(
-            'img/closed_small.png',
-            root=ROOT_FOLDER,
-            mimetype='image/png')
-
+    return static_file(LOGO_DYN_SMALL, root=ROOT_FOLDER, mimetype='image/png')
 
 @get('/img/static/open_small.png')
 def open_closed_img():
-    return static_file(
-        'img/open_small.png',
-        root=ROOT_FOLDER,
-        mimetype='image/png')
-
+    return static_file(LOGO_OPEN_SMALL, root=ROOT_FOLDER, mimetype='image/png')
 
 @get('/img/static/closed_small.png')
 def open_closed_img():
-    return static_file(
-        'img/closed_small.png',
-        root=ROOT_FOLDER,
-        mimetype='image/png')
+    return static_file(LOGO_CLOSED_SMALL, root=ROOT_FOLDER, mimetype='image/png')
 
 # Return PTL logo with red / green text for "lab"
-
-
 @get('/img/logo_status.png')
 def open_closed_img():
-    response.set_header('Cache-Control', 'no-cache, no-store, must-revalidate')
-    response.set_header('max age', '0')
-    response.set_header('Pragma', 'no-cache')
-    response.set_header('Expires', '0')
-    if status_json.json_value(JSON_FILENAME, "state", "open") == "True":
-        return static_file(
-            'img/open_logo.png',
-            root=ROOT_FOLDER,
-            mimetype='image/png')
-    else:
-        return static_file(
-            'img/closed_logo.png',
-            root=ROOT_FOLDER,
-            mimetype='image/png')
-
+    return static_file(LOGO_DYN_2, root=ROOT_FOLDER, mimetype='image/png')
 
 @get('/img/static/open_logo.png')
 def open_closed_img():
-    return static_file(
-        'img/open_logo.png',
-        root=ROOT_FOLDER,
-        mimetype='image/png')
-
+    return static_file(LOGO_OPEN, root=ROOT_FOLDER, mimetype='image/png')
 
 @get('/img/static/closed_logo.png')
 def open_closed_img():
-    return static_file(
-        'img/closed_logo.png',
-        root=ROOT_FOLDER,
-        mimetype='image/png')
+    return static_file(LOGO_CLOSED, root=ROOT_FOLDER, mimetype='image/png')
 
 # Return normal PTL logo when closed and with open logo (green "lab" text)
 # when open
-
-
 @get('/img/logo.png')
 def open_closed_img():
-    response.set_header('Cache-Control', 'no-cache, no-store, must-revalidate')
-    response.set_header('max age', '0')
-    response.set_header('Pragma', 'no-cache')
-    response.set_header('Expires', '0')
-    if status_json.json_value(JSON_FILENAME, "state", "open") == "True":
-        return static_file(
-            'img/open_logo.png',
-            root=ROOT_FOLDER,
-            mimetype='image/png')
-    else:
-        return static_file(
-            'img/normal_logo.png',
-            root=ROOT_FOLDER,
-            mimetype='image/png')
-
+    return static_file(LOGO_DYN_1, root=ROOT_FOLDER, mimetype='image/png')
 
 @get('/img/static/normal_logo.png')
 def open_closed_img():
-    return static_file(
-        'img/normal_logo.png',
-        root=ROOT_FOLDER,
-        mimetype='image/png')
+    return static_file(LOGO_NORMAL, root=ROOT_FOLDER, mimetype='image/png')
 
 # HTML page showing the different logo
 @get('/img/')
@@ -118,23 +53,20 @@ def img_info_page():
 
 @get('/img/ptl_control_panel.jpg')
 def img_info_page():
-    return static_file('img/ptl_control_panel.jpg', root=ROOT_FOLDER)
+    return static_file('img/static/ptl_control_panel.jpg', root=ROOT_FOLDER)
 
 ######## End of status image section ####################
 
 ######## Start of status update section ####################
-
 
 @get('/change')
 @get('/change_status')
 def change_status():
     return static_file('html/change_status.html', root=ROOT_FOLDER)
 
-
 @get('/form_styles.css')
 def form_styles_css():
     return static_file('html/form_styles.css', root=ROOT_FOLDER)
-
 
 @post('/change')
 @post('/change_status')
@@ -162,13 +94,11 @@ def change_status_post():
 
 ######## Start of simple JSON info retriever ####################
 
-
 @get('/')
 @get('/info')
 @get('/info/')
 def info_ptl_status_api_page():
     return static_file('html/info_ptl_status_api.html', root=ROOT_FOLDER)
-
 
 @get('/info/:tag#[a-z]+#')
 @get('/info/:tag#[a-z]+#/')
@@ -179,7 +109,6 @@ def return_info(tag):
     else:
         abort(404, "")
 
-
 @get('/info/:tag#[a-z]+#/:tag2#[a-z]+#')
 @get('/info/:tag#[a-z]+#/:tag2#[a-z]+#/')
 def return_info(tag, tag2):
@@ -188,7 +117,6 @@ def return_info(tag, tag2):
         return response
     else:
         abort(404, "")
-
 
 @get('/info/:tag#[a-z]+#/:tag2#[a-z]+#/:tag3#[a-z]+#')
 @get('/info/:tag#[a-z]+#/:tag2#[a-z]+#/:tag3#[a-z]+#/')
@@ -204,17 +132,11 @@ def return_info(tag, tag2, tag3):
 ######## Start of return Json ####################
 # Serve json file
 
-
 @get('/status.json')
 @get('/json/')
 @get('/json')
 def return_json():
     status_json.json_read(JSON_FILENAME, skip_check=0)
-    response.set_header('Cache-Control', 'no-cache')
-    response.set_header('max age', '0')
-    response.set_header('Pragma', 'no-cache')
-    response.set_header('Expires', '0')
-    response.set_header('Access-Control-Allow-Origin', '*')
     return static_file(JSON_FILE_REL, root=ROOT_FOLDER)
 
 ######## End of return Json ####################
@@ -222,14 +144,12 @@ def return_json():
 ######## Start of error page def ####################
 # Return blank page on 404
 
-
 @error(404)
 def error404(error):
     return ''
 ######## End of error page def ####################
 
 ### Functions ###
-
 
 def valid_api_key(api_key, file_keys):
     if len(api_key) == KEY_LENGTH:
