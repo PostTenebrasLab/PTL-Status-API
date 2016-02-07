@@ -53,7 +53,7 @@ If you want to use the python built in web server (useful for testing)
 
 * You will need to install "mod_wsgi"
 
-On debian, you can add a file to your /etc/apache2/conf.d folder with this configuration:
+You must add following line to your site virtualhost configuration (On Debian: /etc/apache2/sites-enabled/...)
 
 * Adapt location as needed
 
@@ -71,6 +71,4 @@ WSGIScriptAlias /status /data/www_app/status/adapter.wsgi
     Order deny,allow
     Allow from all
 </Directory>
-##### END BOTTLE #######
 ````
-
